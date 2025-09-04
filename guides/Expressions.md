@@ -10,6 +10,7 @@ Full documentation for Expressions can be found in the 'Getting Started' guide w
 - [Nested Variables](#nested-variables)
 - [Template Literal](#template-literal)
 - [Modulus Operator](#modulus-operator)
+- [Strict vs Loose Comparison](#strict-vs-loose-comparison)
 
 ## Ternary Operator
 
@@ -91,3 +92,19 @@ nextSelection
 ```
 
 In this example, we have an array of a set of cameras (which here is written in the Expression but could be stored in a variable to more easily use in multiple places). Every press increments the next selection value by 1 until it reaches the length of the cameras array before returning to 0, and then that value is returned to be saved into the variable.
+
+
+## Strict vs Loose Comparison
+
+When making a comparison between 2 values, such as when checking if a variable is a certain value to conditionally do something, it is important to understand the difference between Strict and Loose comparison as this can result in unexpected results if you use the wrong one.
+
+With strict comparison, such as Strict Equality `===`, both sides of the comparison must match exactly (and similarly with Not Strict Equality `!==` they must not exactly match), to return true. Loose Equality `==` on the other hand will return true if they are loosely equal, for example `1 == 1` will return true, but so will `1 == '1'`, and also `1 == true`, where as `1 === '1'` and `1 === true` will both return false.
+
+This is because all values are either truthy, or falsy, for example `0`, `null`, `undefined`, `NaN`, and an empty string `""`, are all falsy, so if any of them are loosely equalled to false, they will return true. On the reverse, any non-zero number will be truthy, as will a string that isn't empty.
+
+Example of where this can be problematic: 
+`$(custom:some_boolean_string) ? 123 : 456`
+
+The issue with this, is that if you have a variable that stores `'true'` or `'false'` as actual strings, these are non-empty strings so both of them are truthy and so that Expression will always return `123` in that situation. To fix this you would either need to parse the variable first to turn the strings into actual booleans, or use strict equality and compare it to an actual expected value such as `$(custom:some_boolean_string) === 'true' ? 123 : 456`
+
+In best practice, always use strict comparisons `===` and `!==`, and only use loose comparison `==` and `!=` when you know you specifically what that behaviour.
