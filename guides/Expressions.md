@@ -61,7 +61,7 @@ This opens the possibility of functionality such as using a rotary dial on a Str
 
 Template Literals (Template Strings) are a type of text string that provides a convenient way to create a text string and insert dynamic data such as using Variables, or performing Expression functions. Whilst this is not the only way to achieve this, template literals are often the most compact and clear way to write such strings of text.
 
-Template Literals are created by starting and ending the string with backticks `` ` ``, for example `` `This is a Template Literal` ``. Expressions can be used within a Template Literal by surrounding it with `${}`, such as `` `The answer to 1 + 2 is: ${1 + 2}` `` which would result in `The answer to 1 + 2 is: 3`. Not that unlike Variables in Companion which use `$` followed by parenthesis `()`, Template Literal uses `$` followed by braces `{}` to evaluate the content inside.
+Template Literals are created by starting and ending the string with backticks `` ` ``, for example `` `This is a Template Literal` ``. Expressions can be used within a Template Literal by surrounding it with `${}`, such as `` `The answer to 1 + 2 is: ${1 + 2}` `` which would result in `The answer to 1 + 2 is: 3`. Note that unlike Variables in Companion which use `$` followed by parenthesis `()`, Template Literal uses `$` followed by braces `{}` to evaluate the content inside.
 
 An example of where this can be useful is to generate filenames for recordings, such as `` `recording_${$(internal:date_iso)}_camera_${$(custom:camera)}.mp4` `` which could result in `recording_2025-09-03_camera_1.mp4`.
 
