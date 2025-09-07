@@ -10,6 +10,7 @@ These guides, as with Companion, are free and open source, but if you'd like to 
 
 - [Expressions](/guides/Expressions.md)
 - [HTTP API](/guides/HTTP.md)
+- [Local Variables](/guides/LocalVariables.md)
 - [Random Actions](/guides/RandomActions.md)
 
 ## Expressions
@@ -19,6 +20,10 @@ A lot of power comes from Companions Expressions system, which in fields that su
 ## HTTP API
 
 Companion has a HTTP API that allows for features such as pressing a button. With the deprecated API that will be removed in the future it was possible to just type an endpoint into a browsers URL bar to make the GET requests, but as the new API mostly uses POST requests this is no longer possible, so I'll show how to make a simple page that makes these POST requests and utilize the API when loading the page.
+
+## Local Variables
+
+The [Local Variables](/guides/LocalVariables.md) guide will list a few examples of local variables that are built in to Companion for each button, as well as how to create custom local variables, which can significantly reduce the time to create large numbers of buttons, simplify workflow, and lower the number of places where user error can occur.
 
 ## Random Actions
 

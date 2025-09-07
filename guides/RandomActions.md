@@ -57,7 +57,7 @@ cameras[random] === $(custom:camera) ? cameras[random2] : cameras[random]
 
 With a new random camera set to `$(custom:camera)`, we can use that in an Action, such as the `Transition - Send Input to Program` Action in vMix.
 
-![Image showing setting a Custom Variable with an Expression, and using that Variable in an Action](./RandomActionExample1.png)
+![Image showing setting a Custom Variable with an Expression, and using that Variable in an Action](./images/RandomActionExample1.png)
 
 While here the example uses Input names and uses vMix to cut to them, another example could also be using an array of button page/row/column's and using the internal Action `internal: Button: Trigger press and release` to randomly press one of those buttons.
 
